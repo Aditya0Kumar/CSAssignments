@@ -40,17 +40,17 @@ void displayList(Node* head){
     Node* temp=head;
     cout<<"The linked list becomes: ";
     while(temp != NULL){
-        cout<<temp->data<<"->";
+        cout<<temp->data;
+        if(temp->next != NULL) cout<<"->";
         temp=temp->next;
     }
 }
 
 int main(){
-    Node* head=NULL;
-
-    insertAtEnd(head,10);
-    insertAtEnd(head,20);
-    insertAtEnd(head,30);
+    Node* head = new Node(10);
+    head->next = new Node(20);
+    head->next->next = new Node(30);
+    
     insertAtEnd(head,40);
 
     displayList(head);
